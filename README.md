@@ -114,7 +114,6 @@ For a single Vercel multi-service deployment, set:
 
 ```text
 NEXT_PUBLIC_API_URL=/_/backend
-NEXT_PUBLIC_BASE_PATH=/archive/flow-forge
 ```
 
 ## Docker
