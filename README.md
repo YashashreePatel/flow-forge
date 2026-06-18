@@ -110,6 +110,13 @@ The dashboard starts at `http://localhost:3000`.
 
 Set `NEXT_PUBLIC_API_URL` to point at the backend if it is not running on `http://localhost:8000`.
 
+For a single Vercel multi-service deployment, set:
+
+```text
+NEXT_PUBLIC_API_URL=/_/backend
+NEXT_PUBLIC_BASE_PATH=/archive/flow-forge
+```
+
 ## Docker
 
 ```bash
