@@ -1,0 +1,11 @@
+.DS_Store
+*.pyc
+__pycache__/
+.pytest_cache/
+.venv/
+flowforge.db
+
+node_modules/
+.next/
+out/
+npm-debug.log*

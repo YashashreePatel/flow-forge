@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowforge-worker
+  namespace: flowforge
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flowforge-worker
+  template:
+    metadata:
+      labels:
+        app: flowforge-worker
+    spec:
+      containers:
+        - name: worker
+          image: flowforge-api:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "-m", "app.worker"]
+          env:
+            - name: FLOWFORGE_DB_PATH
+              value: /data/flowforge.db
+            - name: FLOWFORGE_TASK_QUEUE
+              value: default
+            - name: FLOWFORGE_WORKER_INTERVAL_SECONDS
+              value: "5"
